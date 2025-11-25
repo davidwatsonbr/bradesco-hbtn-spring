@@ -31,7 +31,7 @@ class UsuarioServiceTest {
     @Test
     void deveRetornarUsuarioQuandoIdExistir() {
         Usuario usuario = new Usuario();
-        Mockito.when(usuarioRepository.findById(1L))
+        Mockito.when(usuarioRepository.buscarUsuarioPorId(1L))
                         .thenReturn(Optional.of(usuario));
         assertEquals(usuario, usuarioService.buscarPorId(1L));
     }
