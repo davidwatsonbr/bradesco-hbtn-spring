@@ -24,9 +24,10 @@ class ProdutoServiceTest {
 
     @Test
     void deveRetornarProdutoQuandoIdExistir() {
+        Produto produto = new Produto();
         Mockito.when(produtoRepository.findById(1L))
-                        .thenReturn(Optional.of(new Produto()));
-        assertNotNull(produtoService.buscarPorId(1L));
+                        .thenReturn(Optional.of(produto));
+        assertEquals(produto, produtoService.buscarPorId(1L));
     }
 
     @Test
